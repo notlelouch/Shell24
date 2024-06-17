@@ -19,7 +19,16 @@ func main() {
 			}
 			input = input[:len(input)-1]
 
-			fmt.Fprintf(os.Stdout, "%s: command not found\n", input)
+			if input == "exit 0" {
+				os.Exit(0)
+			}
+
+			if input[:4] == "echo" {
+				fmt.Fprintf(os.Stdout, "%s\n", input[5:])
+			} else {
+				fmt.Fprintf(os.Stdout, "%s: command not found\n", input)
+			}
+
 		}
 	}
 }
