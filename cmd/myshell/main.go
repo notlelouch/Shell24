@@ -38,18 +38,21 @@ func main() {
 		case input[:4] == "echo":
 			fmt.Fprintf(os.Stdout, "%s\n", input[5:])
 		case input[:4] == "type":
+			elsebool := false
 			if shellBuiltinCommands[input[5:]] == 1 {
 				fmt.Fprintf(os.Stdout, "%s is a shell builtin\n", input[5:])
 			} else if shellBuiltinCommands[input[5:]] != 1 {
+				elsebool = false
 				for _, path := range paths {
 					if _, err := os.Stat(path + "/" + input[5:]); !os.IsNotExist(err) {
 						fmt.Fprintf(os.Stdout, "%s is %s\n", input[5:], path+"/"+input[5:])
+						elsebool = true
 						break
 					}
 				}
-			} else {
-				fmt.Fprintf(os.Stdout, "chuuuuuuuuuuttt")
-				fmt.Fprintf(os.Stdout, "%s: not found\n", input[5:])
+				if !elsebool {
+					fmt.Fprintf(os.Stdout, "%s: not found\n", input[5:])
+				}
 			}
 		default:
 			fmt.Fprintf(os.Stdout, "%s: command not found\n", input)
