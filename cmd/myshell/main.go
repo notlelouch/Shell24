@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"os/exec"
 	"strings"
 )
 
@@ -16,7 +17,7 @@ func main() {
 	// path := os.Args[0]
 
 	path := os.Getenv("PATH")
-	// /fmt.Println("Value of 'PATH' environment variable:", path)
+	// fmt.Println("Value of 'PATH' environment variable:", path)
 	pathParts := strings.Split(path, ":")
 	paths = append(paths, pathParts...)
 
@@ -30,7 +31,9 @@ func main() {
 		if err != nil {
 			fmt.Println("Error reading", err)
 		}
+
 		input = input[:len(input)-1]
+		//input  = strings.Split(input, " ")
 
 		switch {
 		case input == "exit 0":
@@ -52,6 +55,22 @@ func main() {
 				}
 				if !elsebool {
 					fmt.Fprintf(os.Stdout, "%s: not found\n", input[5:])
+				}
+			}
+
+		case len(strings.Split(input, " ")) > 1:
+			program_iput := strings.Split(input, " ")[0]
+			argument_input := strings.Split(input, " ")[1]
+			for _, path := range paths {
+				if _, err := os.Stat(path + "/" + program_iput); !os.IsNotExist(err) {
+					cmd := exec.Command(path+"/"+program_iput, argument_input)
+					output, err := cmd.CombinedOutput()
+					if err != nil {
+						fmt.Fprintf(os.Stderr, "Error running %s: %v\n", program_iput, err)
+					} else {
+						fmt.Fprintf(os.Stdout, "%s", string(output))
+					}
+					break
 				}
 			}
 		default:
