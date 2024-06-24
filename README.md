@@ -11,14 +11,6 @@ Shell24 is a custom shell designed to interpret and execute shell commands, mana
 - **REPL:** Implements a robust Read-Eval-Print Loop for interactive command execution.
 - **Error Handling:** Provides detailed error messages for invalid commands and incorrect usage.
 
-
-## Prerequisites
-- Solidity
-- Hardhat
-- MetaMask wallet
-- QuickNode account
-- Etherscan account
-
 ## Setup
 
 ### Clone the repository to your local machine
