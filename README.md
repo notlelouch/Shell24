@@ -1,36 +1,44 @@
 [![progress-banner](https://backend.codecrafters.io/progress/shell/1c107fbd-8eb6-4ac4-86ff-032104f44c8a)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
 
-This is a starting point for Go solutions to the
-["Build Your Own Shell" Challenge](https://app.codecrafters.io/courses/shell/overview).
+# Welcome to Shell24, a POSIX compliant shell written in Go!
 
-In this challenge, you'll build your own POSIX compliant shell that's capable of
-interpreting shell commands, running external programs and builtin commands like
-cd, pwd, echo and more. Along the way, you'll learn about shell command parsing,
-REPLs, builtin commands, and more.
+This is a [RainbowKit](https://rainbowkit.com) + [wagmi](https://wagmi.sh) + [Next.js](https://nextjs.org/) project bootstrapped with [`create-rainbowkit`](/packages/create-rainbowkit).
 
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
+Shell24 is a custom shell designed to interpret and execute shell commands, manage processes, and run both external programs and builtin commands such as cd, pwd, and echo, etc.
 
-# Passing the first stage
+## Features
 
-The entry point for your `shell` implementation is in `cmd/myshell/main.go`.
-Study and uncomment the relevant code, and push your changes to pass the first
-stage:
+- **POSIX Compliance:** Adheres to the POSIX standard for command interpretation and process management.
+- **Command Parsing:** Efficient parsing of shell commands.
+- **Builtin Commands:** Supports common builtin commands like cd, pwd, echo, and more.
+- **External Programs:** Executes external programs seamlessly.
+- **REPL:** Implements a robust Read-Eval-Print Loop for interactive command execution.
+- **Error Handling:** Provides detailed error messages for invalid commands and incorrect usage.
 
-```sh
-git add .
-git commit -m "pass 1st stage" # any msg
-git push origin master
-```
 
-Time to move on to the next stage!
+## Prerequisites
+- Solidity
+- Hardhat
+- MetaMask wallet
+- QuickNode account
+- Etherscan account
 
-# Stage 2 & beyond
+## Setup
 
-Note: This section is for stages 2 and beyond.
+### Clone the repository to your local machine
 
-1. Ensure you have `go (1.19)` installed locally
-1. Run `./your_shell.sh` to run your program, which is implemented in
-   `cmd/myshell/main.go`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
+   ```bash
+    git clone https://github.com/<your_username>/Shell24.git
+    cd Shell24
+   ```
+
+### Usage
+   run the go file directly
+  ```bash
+    go run cmd/myshell/main.go
+   ```
+   or provide path details and run the script
+
+## Contributing
+
+Contributions are welcome! If you have ideas for improvements, new features, or bug fixes, please open an issue or submit a pull request.
