@@ -1,8 +1,4 @@
-[![progress-banner](https://backend.codecrafters.io/progress/shell/1c107fbd-8eb6-4ac4-86ff-032104f44c8a)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
-
-# Welcome to Shell24, a POSIX compliant shell written in Go!
-
-This is a [RainbowKit](https://rainbowkit.com) + [wagmi](https://wagmi.sh) + [Next.js](https://nextjs.org/) project bootstrapped with [`create-rainbowkit`](/packages/create-rainbowkit).
+# Shell24: A POSIX compliant shell written in Go!
 
 Shell24 is a custom shell designed to interpret and execute shell commands, manage processes, and run both external programs and builtin commands such as cd, pwd, and echo, etc.
 
