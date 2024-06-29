@@ -38,6 +38,13 @@ func main() {
 		switch {
 		case input == "exit 0":
 			os.Exit(0)
+		case input == "pwd":
+			dir, err := os.Getwd()
+			if err != nil {
+				fmt.Fprintf(os.Stdout, "Error getting current directory")
+			} else {
+				fmt.Fprintf(os.Stdout, "%s\n", dir)
+			}
 		case input[:4] == "echo":
 			fmt.Fprintf(os.Stdout, "%s\n", input[5:])
 		case input[:4] == "type":
